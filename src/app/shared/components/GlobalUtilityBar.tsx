@@ -14,7 +14,7 @@ export const GlobalUtilityBar = () => {
         {/* left  column */}
         <div className={`flex items-center gap-2 ${textSize}`}>
           <span className="text-yellow-400">⚠</span>
-          <p className=" whitespace-nowrap text-gray-200 ">{headingText}</p>
+          <p className="  text-gray-200 ">{headingText}</p>
         </div>
 
         {/* Right  Column inside flex two column */}
