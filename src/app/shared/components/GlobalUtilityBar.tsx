@@ -3,7 +3,7 @@ import { FaCalendarMinus } from "react-icons/fa";
 
 const headingText = "Narrated by Aisha (RA)... Narrated or verified Hadith...";
 const hijriDate = "18 Dhul Hijjah 1447 AH";
-const textSize = "text-sm ";
+const textSize = "text-sm text-font";
 
 
 export const GlobalUtilityBar = () => {
@@ -31,7 +31,7 @@ export const GlobalUtilityBar = () => {
 
           {/* Language */}
           <div className="relative">
-            <button className="flex items-center gap-1 text-xs">
+            <button className="text-font flex items-center gap-1 text-xs">
               English
               <span>▾</span>
             </button>

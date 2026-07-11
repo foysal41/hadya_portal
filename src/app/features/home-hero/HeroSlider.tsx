@@ -64,12 +64,12 @@ const HeroSlider = () => {
 
       {/* Content */}
       <div className='relative z-20 flex h-full items-center justify-center px-6'>
-        <div className='max-w-4xl text-center text-white transition-transform duration-75' >
-          <h1 className='font-serif text-4xl md:text-6xl  font-bold leading-tight'>{slides[active].title}</h1>
-          <p className='mx-auto mt-3 text-base md:text-lg text-gray-200 '>{slides[active].description}</p>
+        <div className='max-w-3xl text-center text-white transition-transform duration-75' >
+          <h1 className='heading-font text-3xl md:text-6xl  font-bold leading-tight'>{slides[active].title}</h1>
+          <p className=' text-font mx-auto mt-3 text-base md:text-lg text-gray-200 '>{slides[active].description}</p>
 
           <div className='flex flex-col items-center justify-center mt-10 gap-4 sm:flex-row'>
-            <button className='rounded-full bg-[#0B794F] hover:bg-[#149865] px-8 py-4 font-semibold text-white border border-[#0B794F]  shadow-lg transition-all duration-300 cursor-pointer'><span>Explore Hadya</span></button>
+            <button className='rounded-full bg-[#0B794F] hover:bg-[#149865cvfb] px-8 py-4 font-semibold text-white border border-[#0B794F]  shadow-lg transition-all duration-300 cursor-pointer'><span>Explore Hadya</span></button>
             <button className='rounded-full border border-white px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-[#074D43]'><span>Discover Services</span></button>
 
           </div>

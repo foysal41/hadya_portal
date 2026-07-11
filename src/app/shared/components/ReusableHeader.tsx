@@ -12,46 +12,69 @@ import { MobileNav } from './MobileNav'
 
 const NAVLINKS = [
   {
-    id:1,
-    url: "#",
-    label: "Home"
+    id: 1,
+    label: "Home",
+    url: "/",
   },
+
   {
-    id:2,
-    url: "#",
-    label: "Shop"
+    id: 2,
+    label: "Shop",
+    url: "/shop",
+    submenu: [
+      { label: "Ajwa Dates", url: "/shop/ajwa-dates" },
+      { label: "Prayer Mats", url: "/shop/prayer-mats" },
+      { label: "Attar", url: "/shop/attar" },
+      { label: "Umrah Kits", url: "/shop/umrah-kits" },
+    ],
   },
+
   {
-    id:3,
-    url: "#",
-    label: "Sponsor"
+    id: 3,
+    label: "Sponsor",
+    url: "/sponsor",
+    submenu: [
+      { label: "Food Distribution", url: "/sponsor/food" },
+      { label: "Water Distribution", url: "/sponsor/water" },
+      { label: "Wheelchair", url: "/sponsor/wheelchair" },
+    ],
   },
+
   {
     id: 4,
-    url : "#",
-    label: "Digital Tools"
+    label: "Digital Tools",
+    url: "/digital-tools",
+    submenu: [
+      { label: "Qibla Finder", url: "/digital-tools/qibla" },
+      { label: "Dam Analyzer", url: "/digital-tools/dam" },
+      { label: "Quran Tracker", url: "/digital-tools/quran-tracker" },
+    ],
   },
+
   {
     id: 5,
-    url: "#",
-    label: "Travel Services"
+    label: "Travel Services",
+    url: "/travel-services",
   },
+
   {
     id: 6,
-    url: "#",
-    label: "Tour Operators"
+    label: "Tour Operators",
+    url: "/tour-operators",
   },
+
   {
     id: 7,
-    url: "#",
-    label: "Knowledge"
+    label: "Knowledge",
+    url: "/knowledge",
   },
+
   {
-    id: 8, 
-    url : "#",
-    label: "About"
-  }
-]
+    id: 8,
+    label: "About",
+    url: "/about",
+  },
+];
 
 const flexClass = "flex items-center justify-between gap-2"
 const sectionPadding ="py-2 px-4 lg:px-0"
@@ -76,9 +99,25 @@ const closeNav = () => setShowNav(false);
 
             {/* Menu */}
             <div className={`hidden lg:flex items-center space-x-5`}>
-              {NAVLINKS.map((link) => {
-                return <Link key={link.id} href={link.url}>{link.label}</Link>
-              })}
+              {NAVLINKS.map((link) => (
+                <div key={link.id} className='relative group'>
+                  <Link href={link.url} className='flex items-center gap-1 text-sm hover:text-emerald-300 transition'>{link.label}
+                  {link.submenu && (
+                    <span className='text-xs'>▾</span>
+                  )}
+                  </Link>
+
+                  {
+                    link.submenu &&(
+                      <div className='absolute left-0 top-full hidden group-hover:block w-56 rounded-md bg-white shadow-xl py-2 z-50'>
+                          {link.submenu.map((item ) => (
+                            <Link key={item.url} href={item.url} className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>{item.label}</Link>
+                          ))}
+                      </div>
+                    )
+                  }
+                </div>
+              ))}
             </div>
             {/* <MobileNav showNav={showNav} closeNav={closeNav}></MobileNav> */}
            <MobileNav  navlink={NAVLINKS} showNav={showNav} closeNav={closeNav}  />
@@ -86,8 +125,8 @@ const closeNav = () => setShowNav(false);
             {/* Auth Btn */}
             <div className={`${flexClass}`}>
                 <BiSearch size={25} className='hidden lg:block cursor-pointer'></BiSearch>
-                 <button className='hidden lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-white rounded-md cursor-pointer' >Login</button>
-                  <button className='hidden lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-[#0B794F] bg-[#0B794F] hover:bg-[#149865]  rounded-md cursor-pointer transition-all duration-300 ' >Register</button>
+                 <button className='hidden text-font lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-white rounded-md cursor-pointer' >Login</button>
+                  <button className='hidden text-font lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-[#0B794F] bg-[#0B794F] hover:bg-[#149865]  rounded-md cursor-pointer transition-all duration-300 ' >Register</button>
 
                   {/* Hamburger Menu */}
                   <div>
