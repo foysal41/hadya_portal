@@ -4,7 +4,11 @@ import { FaCalendarMinus } from "react-icons/fa";
 const headingText = "Narrated by Aisha (RA)... Narrated or verified Hadith...";
 const hijriDate = "18 Dhul Hijjah 1447 AH";
 const textSize = "text-sm text-font";
-
+{/* <div className="overflow-hidden whitespace-nowrap">
+  <p className="inline-block animate-marquee text-gray-200">
+    {headingText}
+  </p>
+</div> */}
 
 export const GlobalUtilityBar = () => {
   return (
@@ -14,7 +18,11 @@ export const GlobalUtilityBar = () => {
         {/* left  column */}
         <div className={`flex items-center gap-2 ${textSize}`}>
           <span className="text-yellow-400">⚠</span>
-          <p className="  text-gray-200 ">{headingText}</p>
+          <div className="overflow-hidden whitespace-nowrap">
+            <p className="  text-gray-200  inline-block animate-marquee">{headingText}</p>
+          </div>
+          
+          
         </div>
 
         {/* Right  Column inside flex two column */}
