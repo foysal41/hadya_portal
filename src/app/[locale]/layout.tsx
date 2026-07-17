@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Amiri, Plus_Jakarta_Sans } from "next/font/google";
 import "../globals.css";
+import { GlobalUtilityBar } from "../shared/components/GlobalUtilityBar";
+import ReusableHeader from "../shared/components/ReusableHeader";
 
 const amiri = Amiri({
   subsets: ["latin", "arabic"],
@@ -28,7 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${amiri.variable} ${plusJakarta.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <GlobalUtilityBar/>
+        <ReusableHeader />
+        {children}</body>
     </html>
   );
 }

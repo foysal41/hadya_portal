@@ -1,13 +1,11 @@
 import HeroSlider from "../features/home-hero/HeroSlider";
-import { GlobalUtilityBar } from "../shared/components/GlobalUtilityBar";
-import ReusableHeader from "../shared/components/ReusableHeader";
+import PlatformPage from "../features/home-platform/PlatformSection";
 
 export default function Page() {
   return (
-    <>
-      <GlobalUtilityBar />
-      <ReusableHeader />
+    <>     
       <HeroSlider />
+      <PlatformPage></PlatformPage>
     </>
   );
 }

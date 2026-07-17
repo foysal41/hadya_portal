@@ -12,9 +12,9 @@ const textSize = "text-sm text-font";
 
 export const GlobalUtilityBar = () => {
   return (
-    <div className="w-full bg-[#126C62] text-white">
+    <div className=" px-5 bg-[#126C62] text-white">
       {/* Flex two column */}
-      <div className="max-w-7xl mx-auto  px-4 py-2 md:flex justify-between items-center ">
+      <div className=" px-4 py-2 md:flex justify-between items-center ">
         {/* left  column */}
         <div className={`flex items-center gap-2 ${textSize}`}>
           <span className="text-yellow-400">⚠</span>

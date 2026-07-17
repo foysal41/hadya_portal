@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+:root {
+  --bg-canvas: #FCF8F3;
+  --white: #FFFFFF;
+
+  --brand-primary: #074D43;
+  --brand-accent: #147A6E;
+
+  --text-main: #1A2421;
+  --text-muted: #4B5854;
+
+  --border: #E5E7EB;
+
+  --spanColor: #C89A38;
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-white: var(--white);
+
+  --color-primary: var(--brand-primary);
+  --color-accent: var(--brand-accent);
+
+  --color-main: var(--text-main);
+  --color-muted: var(--text-muted);
+
+  --color-border: var(--border);
+
+  --color-spanColor: var(--spanColor);
+}
+
 .heading-font {
   font-family: var(--font-amiri);
 }

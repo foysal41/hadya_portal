@@ -88,8 +88,8 @@ const openNav = () => setShowNav(true);
 const closeNav = () => setShowNav(false);
 
   return (
-    <div className={`w-full bg-[#083F39] text-white transition-all duration-200 h-12vh z-100`}>
-      <div className='max-w-7xl mx-auto'> 
+    <div className={` px-5 bg-transprent text-white transition-all duration-200 h-12vh z-100 mb-[-100]`}>
+      <div className=''> 
         {/* Flex three column */}
           <div className={`${flexClass} ${sectionPadding}`}>
             {/* Logo */}
@@ -126,7 +126,7 @@ const closeNav = () => setShowNav(false);
             <div className={`${flexClass}`}>
                 <BiSearch size={25} className='hidden lg:block cursor-pointer'></BiSearch>
                  <button className='hidden text-font lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-white rounded-md cursor-pointer' >Login</button>
-                  <button className='hidden text-font lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-[#0B794F] bg-[#0B794F] hover:bg-[#149865]  rounded-md cursor-pointer transition-all duration-300 ' >Register</button>
+                  <button className='hidden text-font lg:block text-[16px] md:text-[16px] px-[20px] py-[8px] border border-[#C49A38] bg-[#C49A38] hover:bg-[#B08830]  rounded-md cursor-pointer transition-all duration-300 ' >Register</button>
 
                   {/* Hamburger Menu */}
                   <div>
