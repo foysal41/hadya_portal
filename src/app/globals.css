@@ -12,7 +12,8 @@
 
   --border: #E5E7EB;
 
-  --spanColor: #C89A38;
+  --orangeColor: #C89A38;
+  --orangeColorHover: #B08830;
 }
 
 @theme {
@@ -27,7 +28,8 @@
 
   --color-border: var(--border);
 
-  --color-spanColor: var(--spanColor);
+  --color-orangeColor: var(--orangeColor);
+  --color-orangeColorHover: var(--orangeColorHover);
 }
 
 .heading-font {

@@ -73,7 +73,7 @@ const PlatformSection = () => {
     >
       {/* Header Part of Section */}
       <div className={`${layout.sectionDirection.flexCenter}`}>
-        <span className={`${style.span.font} text-spanColor `}>
+        <span className={`${style.span.font} text-orangeColor `}>
           One Platform
         </span>
         <h2 className={style.heading.h2}>Six Ways to Serve You</h2>
@@ -84,7 +84,7 @@ const PlatformSection = () => {
       </div>
 
       {/* Cards section */}
-      <div className={`${layout.sectionDirection.gridCenter}`}>
+      <div className={`${layout.sectionDirection.gridCard}`}>
         {/* Card Item */}
         {platformCards.map((platformCard, idx) => {
           const Icon = platformCard.icon;

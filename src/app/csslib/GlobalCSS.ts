@@ -5,7 +5,12 @@ export const layout ={
   },
   sectionDirection:{
     flexCenter: 'flex flex-col justify-center items-center gap-2 md:gap-4 text-center',
-    gridCenter: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
+    gridCard: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4',
+    flexRow: "flex justify-around items-center gap-4"
+  },
+  containerDirection:{
+    twoColumnGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4",
+    
   }
     
 }
@@ -35,9 +40,11 @@ export const style = {
 
     secondary:
       "cursor-pointer inline-flex items-center justify-center rounded-full border border-primary text-primary text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-primary hover:text-white",
+    secondary2:
+      "cursor-pointer inline-flex items-center justify-center rounded-full border border-white/20 text-white text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-[#1E694E] hover:text-[white]",
 
-    outline:
-      "cursor-pointer inline-flex items-center justify-center rounded-full border border-main text-main text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-main hover:text-white",
+    accent:
+      "cursor-pointer inline-flex items-center justify-center rounded-full bg-orangeColor text-white text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-orangeColorHover",
 
     icon:
       "cursor-pointer inline-flex items-center gap-2 rounded-full bg-primary text-white text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-accent",
