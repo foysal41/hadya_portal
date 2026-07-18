@@ -73,9 +73,9 @@ const PlatformSection = () => {
     >
       {/* Header Part of Section */}
       <div className={`${layout.sectionDirection.flexCenter}`}>
-        <span className={`${style.span.font} text-orangeColor `}>
+        <p className={`${style.span.font} text-orangeColor `}>
           One Platform
-        </span>
+        </p>
         <h2 className={style.heading.h2}>Six Ways to Serve You</h2>
         <p className={`${style.text.md}`}>
           Every dimension of your pilgrimage journey, connected under one

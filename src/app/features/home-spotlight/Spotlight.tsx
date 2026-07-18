@@ -9,12 +9,11 @@ import Link from "next/link";
 const Spotlight = () => {
   return (
     <section
-      className={`${advance.section.padding} ${layout.section.gap} bg-primary`}
-    >
+      className={`${advance.section.padding} ${layout.section.gap} bg-primary`}>
       <div className={`${layout.containerDirection.twoColumnGrid}`}>
         {/* Left Side */}
         <div className="flex flex-col gap-8">
-          <span className={`${style.span.font} text-orangeColor  `}>Featured Spotlight</span>
+          <p className={`${style.span.font} text-orangeColor  `}>Featured Spotlight</p>
           <h2 className={`${style.heading.h2} text-white`}>AI-Powered Hajj Preparation Assistant</h2>
           <p className={`${style.text.sm} text-white/60`}>A personalized, step-by-step preparation guide built on scholarly guidance and two decades of pilgrimage insight. From visa to return flight — intelligently guided. </p>
 
@@ -47,11 +46,11 @@ const Spotlight = () => {
         {/* Right Side */}
         <div className="relative h-105 md:h-137 flex items-center justify-center">
            {/* right card */}
-           <div className="absolute -right-5 md:right-10 w-40 h-64 md:w-72 md:h-107 rounded-3xl overflow-hidden rotate-12 opacity-60">
+           <div className="absolute right-0 md:right-10 w-50 h-60 md:w-72 md:h-107 rounded-3xl overflow-hidden rotate-12 opacity-60">
             <Image src={kabaImage} alt="Masjid al Haram minarets Kaaba vertical" fill className="object-cover"></Image>
            </div>
            {/* Left Card */}
-           <div className="absolute -left-5   md:left-10 w-60 h-64 md:w-72 md:h-107 rounded-3xl overflow-hidden -rotate-12 opacity-60">
+           <div className="absolute left-0   md:left-10 w-60 h-64 md:w-72 md:h-107 rounded-3xl overflow-hidden -rotate-12 opacity-60">
             <Image src={kaabaGoldenHour} alt="Kaaba_golden_hour_vertical" fill className="object-cover"></Image>
            </div>
 
