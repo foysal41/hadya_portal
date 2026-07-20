@@ -1,3 +1,4 @@
+import BoutiqueStorefront from "../features/home-commerce/BoutiqueStorefront";
 import DigitalTools from "../features/home-digitalTools/DigitalTools";
 import HeroSlider from "../features/home-hero/HeroSlider";
 import PlatformPage from "../features/home-platform/PlatformSection";
@@ -14,6 +15,7 @@ export default function Page() {
       <Update></Update>
       <DigitalTools></DigitalTools>
       <TrustProcessPipeline></TrustProcessPipeline>
+      <BoutiqueStorefront></BoutiqueStorefront>
     </>
   );
 }
