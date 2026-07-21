@@ -1,7 +1,9 @@
 import BoutiqueStorefront from "../features/home-commerce/BoutiqueStorefront";
 import DigitalTools from "../features/home-digitalTools/DigitalTools";
 import HeroSlider from "../features/home-hero/HeroSlider";
+import AcademicDirectory from "../features/home-knowledge/AcademicDirectory";
 import GroundServices from "../features/home-logistics/GroundServices";
+import SaaSOperatorSuite from "../features/home-operator/SaaSOperatorSuite";
 import PlatformPage from "../features/home-platform/PlatformSection";
 import TrustProcessPipeline from "../features/home-sponsorship/TrustProcessPipeline";
 import Spotlight from "../features/home-spotlight/Spotlight";
@@ -18,6 +20,8 @@ export default function Page() {
       <TrustProcessPipeline></TrustProcessPipeline>
       <BoutiqueStorefront></BoutiqueStorefront>
       <GroundServices></GroundServices>
+      <SaaSOperatorSuite></SaaSOperatorSuite>
+      <AcademicDirectory></AcademicDirectory>
     </>
   );
 }
