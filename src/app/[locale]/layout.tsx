@@ -3,6 +3,7 @@ import { Amiri, Plus_Jakarta_Sans } from "next/font/google";
 import "../globals.css";
 import { GlobalUtilityBar } from "../shared/components/GlobalUtilityBar";
 import ReusableHeader from "../shared/components/ReusableHeader";
+import Footer from "../shared/components/Footer";
 
 const amiri = Amiri({
   subsets: ["latin", "arabic"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <GlobalUtilityBar/>
         <ReusableHeader />
         {children}</body>
+        <Footer></Footer>
     </html>
   );
 }
