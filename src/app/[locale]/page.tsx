@@ -1,6 +1,7 @@
 import BoutiqueStorefront from "../features/home-commerce/BoutiqueStorefront";
 import DigitalTools from "../features/home-digitalTools/DigitalTools";
 import InformationalFAQ from "../features/home-faqs/InformationalFAQ";
+import SupportTestimonials from "../features/home-feedback/SupportTestimonials";
 import HeroSlider from "../features/home-hero/HeroSlider";
 import AcademicDirectory from "../features/home-knowledge/AcademicDirectory";
 import GroundServices from "../features/home-logistics/GroundServices";
@@ -23,7 +24,9 @@ export default function Page() {
       <GroundServices></GroundServices>
       <SaaSOperatorSuite></SaaSOperatorSuite>
       <AcademicDirectory></AcademicDirectory>
+      <SupportTestimonials></SupportTestimonials>
       <InformationalFAQ></InformationalFAQ>
+      
     </>
   );
 }
