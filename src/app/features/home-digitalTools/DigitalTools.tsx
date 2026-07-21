@@ -73,7 +73,7 @@ const DigitalTools = () => {
                 </p>
             </div>
 
-            <div className={`${layout.sectionDirection.gridCard} max-w-350 mx-auto`}>
+            <div className={`${layout.sectionDirection.gridCard} max-w-7xl mx-auto`}>
                 {digitalTools.map((digitalTool) => {
                     const ToolIcon = digitalTool.icon
 
