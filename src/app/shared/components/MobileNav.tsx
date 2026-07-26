@@ -56,6 +56,7 @@ export const MobileNav = ({ navlink, showNav, closeNav }: Props) => {
                 <Link
                   href={item.url}
                   onClick={!item.submenu ? closeNav : undefined}
+                  
                 >
                   {item.label}
                 </Link>

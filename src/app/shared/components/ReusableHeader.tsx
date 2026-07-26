@@ -101,7 +101,7 @@ const closeNav = () => setShowNav(false);
             <div className={`hidden lg:flex items-center space-x-5`}>
               {NAVLINKS.map((link) => (
                 <div key={link.id} className='relative group'>
-                  <Link href={link.url} className='flex items-center gap-1 text-sm hover:text-emerald-300 transition'>{link.label}
+                  <Link href={link.url} className='flex items-center gap-1 text-md hover:text-emerald-300 transition'>{link.label}
                   {link.submenu && (
                     <span className='text-xs'>▾</span>
                   )}
@@ -111,7 +111,7 @@ const closeNav = () => setShowNav(false);
                     link.submenu &&(
                       <div className='absolute left-0 top-full hidden group-hover:block w-56 rounded-md bg-white shadow-xl py-2 z-50'>
                           {link.submenu.map((item ) => (
-                            <Link key={item.url} href={item.url} className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>{item.label}</Link>
+                            <Link key={item.url} href={item.url} className='block px-4 py-2 text-md text-gray-700 hover:bg-gray-100'>{item.label}</Link>
                           ))}
                       </div>
                     )

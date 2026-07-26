@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import hero1 from "@/../public/images/Kaaba.webp"
-import hero2 from "@/../public/images/Masjid_a_-nabawi.webp";
-import hero3 from "@/../public/images/Pilgrims_ritual.webp";
-import hero4 from "@/../public/images/distribution.webp";
+import hero1 from "@/../public/images/man-watcing-qubla-direction.jpeg"
+import hero2 from "@/../public/images/direction.jpeg";
+import hero3 from "@/../public/images/pilgrimage-tools.jpeg";
+import hero4 from "@/../public/images/pilgrimage-read-quran-with-hadya-app.jpeg";
 import Image from 'next/image';
 
 
@@ -47,7 +47,7 @@ const HeroSlider = () => {
   }, [])
    
   return (
-    <div className='relative overflow-hidden h-[90vh] '>
+    <div className='relative overflow-hidden h-[80vh]  mt-8 md:mt-0'>
       {/* Background Image */}
       {
         slides.map((slide, idx)=> (

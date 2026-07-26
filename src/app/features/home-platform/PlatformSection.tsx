@@ -92,7 +92,7 @@ const PlatformSection = () => {
           return (
             <div
               key={idx}
-              className={`relative overflow-hidden  min-h-105 md:min-h-110  bg-white py-10 flex flex-col justify-center items-center rounded-lg border border-gray-300 transition-all duration-200 ease-in hover:shadow-md hover:-translate-y-1 `}
+              className={`relative overflow-hidden  min-h-105 md:min-h-60  bg-white py-10 flex flex-col justify-center items-center rounded-lg border border-gray-300 transition-all duration-200 ease-in hover:shadow-md hover:-translate-y-1 `}
             >
               <div
                 style={{ backgroundImage: "url('/images/card-bg-2.webp')" }}

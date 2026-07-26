@@ -1,7 +1,7 @@
 'use client'
 import { advance, layout, style } from "@/app/csslib/GlobalCSS";
 import React, { useState } from "react";
-import image1 from "../../../../public/images/Kaaba.webp"
+import image1 from "../../../../public/images/man-watcing-qubla-direction.jpeg"
 import image2 from "../../../../public/images/hajj-record.png"
 import image3 from "../../../../public/images/Mecca_Haram_mosque_pilgrims_vertical.jpg"
 import Image from "next/image";

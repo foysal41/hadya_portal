@@ -28,14 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${amiri.variable} ${plusJakarta.variable}`}
-    >
+      lang="en" className={`${amiri.variable} ${plusJakarta.variable}`}>
       <body>
         <GlobalUtilityBar/>
         <ReusableHeader />
-        {children}</body>
-        <Footer></Footer>
+        {children}
+        <Footer/>
+        </body>
+        
     </html>
   );
 }

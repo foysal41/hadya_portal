@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendarMinus } from "react-icons/fa";
 
 const headingText = "Narrated by Aisha (RA)... Narrated or verified Hadith...";
-const hijriDate = "18 Dhul Hijjah 1447 AH";
+const hijriDate = "18 Dhul Hijjah 1447 ";
 const textSize = "text-sm text-font";
 {/* <div className="overflow-hidden whitespace-nowrap">
   <p className="inline-block animate-marquee text-gray-200">
