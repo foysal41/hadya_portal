@@ -3,7 +3,7 @@
 import { advance, layout, style } from "@/app/csslib/GlobalCSS";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import kabaImage from "../../../../public/images/minarets_Kaaba_vertical.jpg";
 import kaabaGoldenHour from "../../../../public/images/Kaaba_golden_hour_vertical.jpg";
@@ -22,7 +22,7 @@ type Slide = {
   cardValue: string;
   cardLabel: string;
   primaryBtn: string;
-  secondaryBtn: string;
+ 
 };
 
 const slides: Slide[] = [
@@ -50,7 +50,7 @@ const slides: Slide[] = [
     cardValue: "2.8M+",
     cardLabel: "Pilgrims Served",
     primaryBtn: "Try It Free",
-    secondaryBtn: "Learn More",
+   
   },
 
   {
@@ -77,7 +77,7 @@ const slides: Slide[] = [
     cardValue: "150+",
     cardLabel: "Interactive Guides",
     primaryBtn: "Explore",
-    secondaryBtn: "View Guide",
+    
   },
 
   {
@@ -104,28 +104,57 @@ const slides: Slide[] = [
     cardValue: "500+",
     cardLabel: "Knowledge Resources",
     primaryBtn: "Start Reading",
-    secondaryBtn: "Discover",
+    
   },
 ];
 
 const Spotlight = ():React.ReactElement => {
+const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 const [active, setActive] = useState<number>(0);
 
+const [paused, setPaused] = useState(false);
+
+const handleMouseEnter = () => {
+  if (timeoutRef.current) {
+    clearTimeout(timeoutRef.current);
+  }
+
+  setPaused(true);
+};
+
+const handleMouseLeave = () => {
+  timeoutRef.current = setTimeout(() => {
+    setPaused(false);
+  }, 25000);
+};
+
 useEffect(() => {
+  if(paused) return
   const interval = setInterval(() =>{
     setActive((prev) => (prev + 1) % slides.length)
   }, 3000);
 
   return () => clearInterval(interval);
 
-}, [])
+}, [paused])
+
+
+useEffect(() => {
+  return () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+}, []);
+
+
 
 const prev = active === 0 ? slides.length - 1 : active -1;
 const next = active === slides.length -1 ? 0 : active +1;
 const current = slides[active]
 
   return (
-    <section  className={`${advance.section.padding} ${layout.section.gap} bg-primary`} >
+    <section onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className={`${advance.section.padding} ${layout.section.gap} bg-primary`} >
       <div className={layout.containerDirection.twoColumnGrid}>
         {/* LEFT */}
 
@@ -168,11 +197,7 @@ const current = slides[active]
               </button>
             </Link>
 
-            <Link href="#">
-              <button className={style.button.secondary2}>
-                {current.secondaryBtn}
-              </button>
-            </Link>
+          
           </div>
         </div>
 

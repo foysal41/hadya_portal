@@ -5,6 +5,7 @@ import image1 from "../../../../public/images/man-watcing-qubla-direction.jpeg"
 import image2 from "../../../../public/images/hajj-record.png"
 import image3 from "../../../../public/images/Mecca_Haram_mosque_pilgrims_vertical.jpg"
 import Image from "next/image";
+import Link from "next/link";
 
 
 export const featuredProducts = [
@@ -79,11 +80,14 @@ const BoutiqueStorefront = () => {
             </div>
 
             {/* Thumbnail */}
-            <div className="max-w-7xl mx-auto mt-5 flex gap-4">
+            <div className="max-w-7xl mx-auto mt-5 flex items-center  gap-4">
                 {featuredProducts.map((product) => {
 
-                    return <button key={product.id} onClick={() => setActiveProduct(product)} className={`relative h-24 w-24 overflow-hidden rounded-2xl border-2 transition-all duration-300 ${activeProduct.id === product.id ? "border-primary scale-105" : "border-transparent hover:border-primary"}`} ><Image src={product.image} alt={product.title} fill className="object-cover"></Image></button>
+                    return <button key={product.id} onClick={() => setActiveProduct(product)} className={`relative h-50 w-50 overflow-hidden rounded-2xl border-2 transition-all duration-300 ${activeProduct.id === product.id ? "border-primary scale-105" : "border-transparent hover:border-primary"}`} ><Image src={product.image} alt={product.title} fill className="object-cover"></Image></button>
                 })}
+
+                
+                <Link href={"#"} className="inline-flex items-center justify-center rounded-full border border-primary px-8 h-12 text-primary font-medium transition-all duration-300 hover:bg-primary/90"> View More</Link>
             </div>
 
 

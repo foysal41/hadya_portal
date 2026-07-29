@@ -195,7 +195,7 @@ export default function DigitalTools() {
                                     Featured Tool
                                 </span>
 
-                                <h3 className="mb-5 tex-2xl md:text-4xl font-bold">
+                                <h3 className="mb-5 text-2xl md:text-4xl font-bold">
                                     {activeTool.title}
                                 </h3>
 
@@ -203,7 +203,7 @@ export default function DigitalTools() {
                                     {activeTool.description}
                                 </p>
 
-                                <button className={style.button.primary}>
+                                <button className={style.button.accent}>
                                     Launch Tool
                                 </button>
                             </div>
