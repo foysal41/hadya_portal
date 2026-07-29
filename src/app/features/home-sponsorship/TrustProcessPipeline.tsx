@@ -172,9 +172,9 @@ const TrustProcessPipeline = () => {
 
 
 
-      <div className="space-y-10">
+      <div className="space-y-10 ">
 
-        <div className="text-center">
+        <div className="text-center mt-15">
 
           <h2 className={style.heading.h2}>
             Choose a Sponsorship

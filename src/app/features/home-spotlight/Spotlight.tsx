@@ -109,40 +109,35 @@ const slides: Slide[] = [
 ];
 
 const Spotlight = ():React.ReactElement => {
-const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
 const [active, setActive] = useState<number>(0);
 
-const [paused, setPaused] = useState(false);
 
 const handleMouseEnter = () => {
-  if (timeoutRef.current) {
-    clearTimeout(timeoutRef.current);
+  if (intervalRef.current) {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
   }
-
-  setPaused(true);
 };
 
-const handleMouseLeave = () => {
-  timeoutRef.current = setTimeout(() => {
-    setPaused(false);
-  }, 25000);
-};
+  const handleMouseLeave = () => {
+    if (intervalRef.current) return;
+
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 3000);
+  };
 
 useEffect(() => {
-  if(paused) return
-  const interval = setInterval(() =>{
-    setActive((prev) => (prev + 1) % slides.length)
+  intervalRef.current = setInterval(() => {
+    setActive((prev) => (prev + 1) % slides.length);
   }, 3000);
 
-  return () => clearInterval(interval);
-
-}, [paused])
-
-
-useEffect(() => {
   return () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
     }
   };
 }, []);

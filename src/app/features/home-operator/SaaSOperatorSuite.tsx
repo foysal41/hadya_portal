@@ -80,11 +80,10 @@ const pilgrims = [
 
 const SaaSOperatorSuite = () => {
   return (
-    <section
-      className={`${advance.section.padding} bg-[#F4EFE6]`}
+    <section className={`${advance.section.padding} bg-[#F4EFE6]`}
     >
       <div
-        className={`${layout.containerDirection.twoColumnGrid} items-center gap-12 max-w-7xl mx-auto`}
+        className={`items-center gap-12 max-w-7xl mx-auto`}
       >
         {/* Left Side */}
         <div className="space-y-8">
@@ -99,7 +98,7 @@ const SaaSOperatorSuite = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
             {features.map((item) => {
               const Icon = item.icon;
 
@@ -136,8 +135,9 @@ const SaaSOperatorSuite = () => {
         </div>
 
         {/* Right Side Dashboard */}
-        <div className="bg-white rounded-[28px] overflow-hidden shadow-2xl border border-black/5">
-          {/* Top Bar */}
+      
+        {/* <div className="bg-white rounded-[28px] overflow-hidden shadow-2xl border border-black/5">
+         
           <div className="bg-primary px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-white/20"></span>
@@ -198,7 +198,10 @@ const SaaSOperatorSuite = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+        
 
 
       </div>
