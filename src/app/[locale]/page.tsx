@@ -15,16 +15,38 @@ export default function Page() {
   return (
     <>     
       <HeroSlider />
+      
+      {/* One Platform */}
       <PlatformPage></PlatformPage>
+
+      {/* Featured Spotlight */}
       <Spotlight></Spotlight>
+
+      {/* News & Updates */}
       <Update></Update>
+
+      {/* Digital Tools */}
       <DigitalTools></DigitalTools>
+
+      {/* Sponsorship With Impact & Choose a Sponsorship*/}
       <TrustProcessPipeline></TrustProcessPipeline>
+
+      {/* Premium Store */}
       <BoutiqueStorefront></BoutiqueStorefront>
+
+      {/* Travel • On-Ground */}
       <GroundServices></GroundServices>
+
+      {/* Tour Operator Solutions */}
       <SaaSOperatorSuite></SaaSOperatorSuite>
+
+      {/* Knowledge Centre */}
       <AcademicDirectory></AcademicDirectory>
+
+      {/* Testimonials */}
       <SupportTestimonials></SupportTestimonials>
+
+      {/* Frequently Asked Questions */}
       <InformationalFAQ></InformationalFAQ>
       
     </>

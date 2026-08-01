@@ -133,7 +133,7 @@ const handleMouseEnter = () => {
 useEffect(() => {
   intervalRef.current = setInterval(() => {
     setActive((prev) => (prev + 1) % slides.length);
-  }, 3000);
+  }, 25000);
 
   return () => {
     if (intervalRef.current) {

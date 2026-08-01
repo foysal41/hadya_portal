@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { advance, layout, style } from "@/app/csslib/GlobalCSS";
+import { advance, style } from "@/app/csslib/GlobalCSS";
 
 import {
   HiOutlineIdentification,
@@ -40,43 +40,43 @@ const features = [
   },
 ];
 
-const pilgrims = [
-  {
-    initials: "AA",
-    name: "Ahmad Al-Farsi",
-    id: "SA-00234",
-    status: "Checked In",
-    color: "bg-green-100 text-green-700",
-  },
-  {
-    initials: "MB",
-    name: "Mariam Bello",
-    id: "NG-00891",
-    status: "In Transit",
-    color: "bg-blue-100 text-blue-700",
-  },
-  {
-    initials: "FH",
-    name: "Farhan Hussain",
-    id: "PK-01102",
-    status: "Pending",
-    color: "bg-orange-100 text-orange-700",
-  },
-  {
-    initials: "SN",
-    name: "Siti Nurhaliza",
-    id: "MY-00456",
-    status: "Checked In",
-    color: "bg-green-100 text-green-700",
-  },
-  {
-    initials: "OE",
-    name: "Omar El-Sheikh",
-    id: "EG-00789",
-    status: "Departed",
-    color: "bg-gray-100 text-gray-700",
-  },
-];
+// const pilgrims = [
+//   {
+//     initials: "AA",
+//     name: "Ahmad Al-Farsi",
+//     id: "SA-00234",
+//     status: "Checked In",
+//     color: "bg-green-100 text-green-700",
+//   },
+//   {
+//     initials: "MB",
+//     name: "Mariam Bello",
+//     id: "NG-00891",
+//     status: "In Transit",
+//     color: "bg-blue-100 text-blue-700",
+//   },
+//   {
+//     initials: "FH",
+//     name: "Farhan Hussain",
+//     id: "PK-01102",
+//     status: "Pending",
+//     color: "bg-orange-100 text-orange-700",
+//   },
+//   {
+//     initials: "SN",
+//     name: "Siti Nurhaliza",
+//     id: "MY-00456",
+//     status: "Checked In",
+//     color: "bg-green-100 text-green-700",
+//   },
+//   {
+//     initials: "OE",
+//     name: "Omar El-Sheikh",
+//     id: "EG-00789",
+//     status: "Departed",
+//     color: "bg-gray-100 text-gray-700",
+//   },
+// ];
 
 const SaaSOperatorSuite = () => {
   return (
