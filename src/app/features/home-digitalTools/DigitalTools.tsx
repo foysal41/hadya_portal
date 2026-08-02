@@ -1,265 +1,225 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-
 import { advance, layout, style } from "@/app/csslib/GlobalCSS";
+import React, { useEffect, useState } from "react";
+import {
+  FaKaaba,
+  FaUsers,
+  FaClock,
+  FaMapMarkerAlt,
+  FaBookOpen,
+  FaCompass,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa";
 
-import { MdExplore, MdOutlineShield, MdOutlineAccessTime, MdGroups, MdMenuBook, } from "react-icons/md";
-
-import { FaCompass } from "react-icons/fa";
-
-export const digitalTools = [
-    {
-        id: 1,
-        icon: FaCompass,
-        title: "Qibla Direction",
-        description: "Precise compass toward the Kaaba from anywhere on Earth.",
-        href: "/tools/qibla-direction",
-    },
-
-    {
-        id: 2,
-        icon: MdExplore,
-        title: "Madinah Direction",
-        description: "Find direction toward Al-Masjid an-Nabawi with precision.",
-        href: "/tools/madinah-direction",
-    },
-
-    {
-        id: 3,
-        icon: MdOutlineShield,
-        title: "Dam Analyzer",
-        description: "Calculate dam obligations with scholarly guidance.",
-        href: "/tools/dam-analyzer",
-    },
-
-    {
-        id: 4,
-        icon: MdGroups,
-        title: "Group Dhikr Counter",
-        description: "Synchronized dhikr tracking for groups.",
-        href: "/tools/group-dhikr",
-    },
-
-    {
-        id: 5,
-        icon: MdOutlineAccessTime,
-        title: "Salawat Counter",
-        description: "Track collective salawat together.",
-        href: "/tools/salawat-counter",
-    },
-
-    {
-        id: 6,
-        icon: MdMenuBook,
-        title: "Qur'an Tracker",
-        description:  "Weekly reading goals with progress.",
-        href: "/tools/quran-tracker",
-    },
+const tools = [
+  {
+    id: 1,
+    icon: FaKaaba,
+    title: "Hajj Analyzer",
+    description: "Plan and understand your Hajj steps with scholarly guidance.",
+  },
+  {
+    id: 2,
+    icon: FaUsers,
+    title: "Group Dhikr Counter",
+    description: "Synchronized dhikr tracking for groups.",
+  },
+  {
+    id: 3,
+    icon: FaClock,
+    title: "Salawat Counter",
+    description: "Track collective salawat together.",
+  },
+  {
+    id: 4,
+    icon: FaMapMarkerAlt,
+    title: "Madinah Direction",
+    description: "Find important sacred locations and directions with ease.",
+  },
+  {
+    id: 5,
+    icon: FaBookOpen,
+    title: "Qur'an Tracker",
+    description: "Weekly reading goals with progress.",
+  },
+  {
+    id: 6,
+    icon: FaCompass,
+    title: "Qibla Direction",
+    description: "Precision direction toward the Kaaba from anywhere on Earth.",
+  },
 ];
 
-const CARD_WIDTH = 260;
+const DigitalTools = () => {
+  const [active, setActive] = useState(0);
 
+  // Active tool
+  const currentTool = tools[active];
+  const ActiveIcon = currentTool.icon;
 
+  // Previous
+  const handlePrevious = () => {
+    setActive((prev) => (prev === 0 ? tools.length - 1 : prev - 1));
+  };
 
-export default function DigitalTools() {
-    const defaultIndex = digitalTools.findIndex(
-        (item) => item.title === "Madinah Direction"
-    );
+  // Next
+  const handleNext = () => {
+    setActive((prev) => (prev === tools.length - 1 ? 0 : prev + 1));
+  };
 
-    const [active, setActive] = useState(defaultIndex);
+  // Auto change
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % tools.length);
+    }, 5000);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActive((prev) => (prev + 1) % digitalTools.length);
-        }, 35000);
+    return () => clearInterval(interval);
+  }, []);
 
-        return () => clearInterval(interval);
-    }, []);
+  // Left items
+  const leftItems = [
+    tools[(active - 2 + tools.length) % tools.length],
+    tools[(active - 1 + tools.length) % tools.length],
+  ];
 
-    const goNext = () => {
-        setActive((prev) => (prev + 1) % digitalTools.length);
-    };
+  // Right items
+  const rightItems = [
+    tools[(active + 1) % tools.length],
+    tools[(active + 2) % tools.length],
+  ];
 
-    const goPrev = () => {
-        setActive((prev) =>
-            prev === 0 ? digitalTools.length - 1 : prev - 1
-        );
-    };
+  return (
+    <section className={`${advance.section.padding} ${layout.section.gap} bg-[#F9F6F0] overflow-hidden`}>
 
-    const orderedTools = useMemo(() => {
-        return [
-            ...digitalTools.slice(active),
-            ...digitalTools.slice(0, active),
-        ];
-    }, [active]);
+      {/* Header */}
+      <div className={layout.sectionDirection.flexCenter}>
+        <p className={`${style.span.font} text-orangeColor`}>
+          Digital Tools
+        </p>
 
-    const activeTool = orderedTools[0];
+        <h2 className={style.heading.h2}>
+          Technology Built for the Sacred Journey
+        </h2>
 
-    return (
-        <section
-            className={`${advance.section.padding} bg-canvas overflow-hidden`}
-        >
-            {/* Heading */}
+        <p className={`${style.text.md} max-w-3xl`}>
+          Precision-crafted spiritual tools, available free to every registered
+          pilgrim—from the moment you land to your final prayer.
+        </p>
+      </div>
 
-            <div
-                className={`${layout.sectionDirection.flexCenter} mb-16`}
-            >
-                <p className={`${style.span.font} text-orangeColor`}>
-                    Digital Tools
-                </p>
+      {/* Carousel */}
+      <div className="relative mt-12">
 
-                <h2 className={style.heading.h2}>
-                    Technology Built for the Sacred Journey
-                </h2>
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_440px_1fr] items-center gap-8">
 
-                <p className={style.text.md}>
-                    Precision-crafted spiritual tools, available free to every
-                    registered pilgrim—from the moment you land to your final
-                    prayer.
-                </p>
-            </div>
+          {/* Left Cards */}
+          <div className="hidden xl:flex items-center justify-end gap-5">
+            {leftItems.map((tool) => {
+              const Icon = tool.icon;
 
-            {/* Conveyor */}
+              return (
+                <div key={tool.id} className="w-55 min-h-56 shrink-0 rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-500">
 
-            <div className="relative max-w-[1600px] mx-auto">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#EEF5F2]">
+                    <Icon className="text-lg text-primary" />
+                  </div>
 
-                {/* Left Button */}
+                  <h3 className="text-2xl font-semibold leading-tight text-[#4B5854]">
+                    {tool.title}
+                  </h3>
 
-                <button
-                    onClick={goPrev}
-                    className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg border border-border hover:bg-primary hover:text-white transition"
-                >
-                    ←
-                </button>
+                  <p className="mt-5 text-sm leading-6 text-[#667085]">
+                    {tool.description}
+                  </p>
 
-                {/* Right Button */}
-
-                <button
-                    onClick={goNext}
-                    className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg border border-border hover:bg-primary hover:text-white transition"
-                >
-                    →
-                </button>
-
-                {/* Conveyor Track */}
-
-                <motion.div
-                    layout transition={{ type: "spring", stiffness: 180, damping: 22, }}
-                    className="flex items-center justify-center gap-7 overflow-hidden px-20" >          {/* Left Small Card */}
-
-                    <div className="hidden lg:flex gap-7s">
-                        {orderedTools.slice(1, 3).map((tool) => {
-                            const Icon = tool.icon;
-
-                            return (
-                                <motion.div key={tool.id} layout whileHover={{ scale: 0.96 }} transition={{
-                                    type: "spring", stiffness: 180, damping: 20,
-                                }} > <Link href={tool.href} onClick={() => setActive(digitalTools.findIndex((item) => item.id === tool.id))}
-                                >
-                                        <div className=" w-65 sm:w-85 md:w-105 lg:w-65 cursor-pointer rounded-3xl border border-border bg-white p-6 shadow-sm opacity-60 scale-[0.92] hover:opacity-100 duration-300" >
-                                            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                                                <Icon className="text-2xl text-primary" />
-                                            </div>
-
-                                            <h3 className={`${style.heading.h3} mb-3`}>
-                                                {tool.title}
-                                            </h3>
-
-                                            <p className={style.text.sm}>
-                                                {tool.description}
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-
-                    {/* Center Featured Card */}
-
-                    <motion.div layout key={activeTool.id} initial={{ scale: 0.9, opacity: 0, }}
-                        animate={{ scale: 1.05, opacity: 1, }}
-                        transition={{  type: "spring", stiffness: 180, damping: 18, }} >
-                        <Link href={activeTool.href}>
-                            <div className="w-[90vw] max-w-117 rounded-[34px] bg-primary p-6 md:p-8 lg:p-10 text-white shadow-2xl"  >
-                                <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
-
-                                    <activeTool.icon className="text-4xl text-orangeColor" />
-
-                                </div>
-
-                                <span className="mb-3 inline-block uppercase tracking-[0.25em] text-orangeColor">
-                                    Featured Tool
-                                </span>
-
-                                <h3 className="mb-5 text-2xl md:text-4xl font-bold">
-                                    {activeTool.title}
-                                </h3>
-
-                                <p className="mb-8 text-lg leading-8 text-white/80">
-                                    {activeTool.description}
-                                </p>
-
-                                <button className={style.button.accent}>
-                                    Launch Tool
-                                </button>
-                            </div>
-                        </Link>
-                    </motion.div>
-
-                    {/* Right Small Cards */}
-
-                    <div className="hidden lg:flex gap-7">
-                        {orderedTools.slice(3).map((tool) => {
-                            const Icon = tool.icon;
-
-                            return (
-                                <motion.div key={tool.id} layout whileHover={{ scale: 0.96 }} transition={{
-                                    type: "spring", stiffness: 180, damping: 20,
-                                }}
-                                >
-                                    <Link href={tool.href} onClick={() => setActive(digitalTools.findIndex((item) => item.id === tool.id))
-                                    } >
-                                        <div style={{ width: CARD_WIDTH }} className="cursor-pointer rounded-3xl border border-border bg-white p-6 shadow-sm opacity-60 scale-[0.92] hover:opacity-100 duration-300">
-                                            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                                                <Icon className="text-2xl text-primary" />
-                                            </div>
-
-                                            <h3 className={`${style.heading.h3} mb-3`}>
-                                                {tool.title}
-                                            </h3>
-
-                                            <p className={style.text.sm}>
-                                                {tool.description}
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-                </motion.div>
-
-                {/* Pagination */}
-
-                <div className="mt-12 flex justify-center gap-3">
-                    {digitalTools.map((tool, index) => (
-                        <button key={tool.id} onClick={() => setActive(index)} className={`h-3 rounded-full transition-all duration-300 ${index === active ? "w-10 bg-orangeColor" : "w-3 bg-primary/20" }`}
-                        />
-                    ))}
                 </div>
-            </div>
+              );
+            })}
+          </div>
 
-            {/* CTA */}
+          {/* Middle Featured Card - Position Fixed */}
+          <div className="relative z-20 w-full max-w-110 mx-auto">
 
-            <div className="mt-16 text-center">
-                <button className={style.button.primary}>
-                    View All Tools
-                </button>
+            <div className="min-h-93 rounded-[30px] bg-primary p-8 md:p-10 shadow-xl flex flex-col justify-center">
+
+              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+                <ActiveIcon className="text-2xl text-[#D5A32F]" />
+              </div>
+
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#D5A32F]">
+                Featured Tool
+              </p>
+
+              <h3 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
+                {currentTool.title}
+              </h3>
+
+              <p className="mt-5 text-base leading-7 text-white/80">
+                {currentTool.description}
+              </p>
+
+              <button className="mt-8 w-fit rounded-full bg-[#D5A32F] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105">
+                Launch Tool
+              </button>
+
             </div>
-        </section>
-    );
-}
+          </div>
+
+          {/* Right Cards */}
+          <div className="hidden xl:flex items-center justify-start gap-5">
+            {rightItems.map((tool) => {
+              const Icon = tool.icon;
+
+              return (
+                <div key={tool.id} className="w-55 min-h-56 shrink-0 rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-500">
+
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#EEF5F2]">
+                    <Icon className="text-lg text-primary" />
+                  </div>
+
+                  <h3 className="text-2xl font-semibold leading-tight text-[#4B5854]">
+                    {tool.title}
+                  </h3>
+
+                  <p className="mt-5 text-sm leading-6 text-[#667085]">
+                    {tool.description}
+                  </p>
+
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        {/* Left Arrow */}
+        <button onClick={handlePrevious} aria-label="Previous tool" className="hidden xl:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 items-center justify-center rounded-full bg-white border border-black/10 shadow-md text-primary hover:bg-primary hover:text-white transition-all duration-300">
+          <FaArrowLeft />
+        </button>
+
+        {/* Right Arrow */}
+        <button onClick={handleNext} aria-label="Next tool" className="hidden xl:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 items-center justify-center rounded-full bg-primary shadow-md text-white hover:scale-105 transition-all duration-300">
+          <FaArrowRight />
+        </button>
+
+      </div>
+
+      {/* Dots */}
+      <div className="mt-10 flex items-center justify-center gap-3">
+        {tools.map((tool, index) => (
+          <button
+            key={tool.id}
+            onClick={() => setActive(index)}
+            aria-label={`Show ${tool.title}`}
+            className={`h-3 rounded-full transition-all duration-300 ${active === index ? "w-10 bg-[#D5A32F]" : "w-3 bg-[#C9D8D3]"}`}
+          />
+        ))}
+      </div>
+
+    </section>
+  );
+};
+
+export default DigitalTools;

@@ -224,7 +224,7 @@ const TrustProcessPipeline = () => {
 
                     <div>
 
-                      <h3 className="text-[28px] font-amiri font-bold leading-tight text-headingColor">
+                      <h3 className="text-lg font-amiri font-bold leading-tight text-headingColor">
 
                         {item.title}
 
