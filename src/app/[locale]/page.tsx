@@ -14,25 +14,25 @@ import Update from "../features/home-update/Update";
 export default function Page() {
   return (
     <>     
-      <HeroSlider />
-      
+      {/* <HeroSlider /> */}
+
       {/* One Platform */}
-      <PlatformPage></PlatformPage>
+      {/* <PlatformPage></PlatformPage> */}
 
       {/* Featured Spotlight */}
-      <Spotlight></Spotlight>
+      {/* <Spotlight></Spotlight> */}
 
       {/* News & Updates */}
-      <Update></Update>
+      {/* <Update></Update> */}
 
       {/* Digital Tools */}
-      <DigitalTools></DigitalTools>
+      {/* <DigitalTools></DigitalTools> */}
 
       {/* Sponsorship With Impact & Choose a Sponsorship*/}
-      <TrustProcessPipeline></TrustProcessPipeline>
+      {/* <TrustProcessPipeline></TrustProcessPipeline> */}
 
       {/* Premium Store */}
-      <BoutiqueStorefront></BoutiqueStorefront>
+      {/* <BoutiqueStorefront></BoutiqueStorefront> */}
 
       {/* Travel • On-Ground */}
       <GroundServices></GroundServices>
