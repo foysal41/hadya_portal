@@ -6,9 +6,9 @@ import React from "react";
 import { FaBookOpen, FaScaleBalanced, FaLandmark, FaMosque, } from "react-icons/fa6";
 
 import umrahImage from "../../../../public/images/Preparing_for_Your_First_Umrah.webp";
-import madhhabImage from "../../../../public/images/Hajj_&_Umrah.webp";
-import birRuhaImage from "../../../../public/images/The_Story_of_Bir-e-Ruha.webp";
-import madinahImage from "../../../../public/images/Visiting_the_Messenger_of_Allah.webp";
+import madhhabImage from "../../../../public/images/Hajj and Umrah as per four Madhab.jpeg";
+import birRuhaImage from "../../../../public/images/Story_of_Bir-e-Ruha.webp";
+import madinahImage from "../../../../public/images/Visiting_the_Messenger_of_Allah.jpeg";
 
 type KnowledgeItem = {
   id: number;
@@ -96,13 +96,12 @@ const AcademicDirectory = () => {
               "
             >
               {/* ================= IMAGE ================= */}
-              <div className="relative h-55 overflow-hidden">
+              <div className="relative h-70 overflow-hidden">
                 <Image
                   src={item.image} alt={item.title} fill
                   className=" object-cover transition-transform duration-500 group-hover:scale-105
                   "
                 />
-
               
                 <div
                   className=" absolute inset-s-4 bottom-2 w-11 h-11 rounded-full bg-[#FFFDF8] flex items-center justify-center shadow-md

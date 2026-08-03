@@ -1,4 +1,5 @@
 import BoutiqueStorefront from "../features/home-commerce/BoutiqueStorefront";
+import CTA from "../features/home-cta/page";
 import DigitalTools from "../features/home-digitalTools/DigitalTools";
 import InformationalFAQ from "../features/home-faqs/InformationalFAQ";
 import SupportTestimonials from "../features/home-feedback/SupportTestimonials";
@@ -48,6 +49,9 @@ export default function Page() {
 
       {/* Frequently Asked Questions */}
       <InformationalFAQ></InformationalFAQ>
+
+      {/* CTA */}
+      <CTA></CTA>
       
     </>
   );

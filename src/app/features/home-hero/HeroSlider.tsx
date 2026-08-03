@@ -47,7 +47,7 @@ const HeroSlider = () => {
   }, [])
    
   return (
-    <div className='relative overflow-hidden h-[80vh]  mt-8 md:mt-0'>
+    <div className='relative overflow-hidden h-[50vh] md:h-[80vh]  pt-10 mt-8 md:mt-0'>
       {/* Background Image */}
       {
         slides.map((slide, idx)=> (

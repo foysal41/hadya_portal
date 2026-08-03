@@ -58,6 +58,6 @@ export const style = {
 
 export const advance ={
   section: {
-    padding:"py-12.5 px-5 md:py-25 "
+    padding:"py-12.5 px-5 md:py-20 "
   }
 }

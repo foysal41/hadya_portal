@@ -1,9 +1,10 @@
 "use client";
 import { advance, layout, style } from "@/app/csslib/GlobalCSS";
 import React, { useState } from "react";
-import image1 from "../../../../public/images/man-watcing-qubla-direction.jpeg";
-import image2 from "../../../../public/images/hajj-record.png";
-import image3 from "../../../../public/images/Mecca_Haram_mosque_pilgrims_vertical.jpg";
+import image1 from "../../../../public/images/ajwa_safawi.jpeg";
+import image2 from "../../../../public/images/Islamic_Books.jpeg";
+import image3 from "../../../../public/images/prayr_essestials.jpeg";
+import image4 from "../../../../public/images/Perfumes_and_gifts.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { BsCartCheck } from "react-icons/bs";
@@ -56,11 +57,11 @@ export const featuredProducts = [
   {
     id: 4,
     badge: "Attar & Gifts",
-    title: "Hajj Essentials Box",
+    title: "Perfumes and Gifts",
     subtitle: "Everything in One Box",
     price: "SAR 320",
     description: "Ihram, slippers, belt and travel accessories.",
-    image: image3,
+    image: image4,
     href: "#",
     type: "Perfumes · Umbrellas · Gifts",
     productQuantity: "27 Products",
@@ -100,16 +101,16 @@ const BoutiqueStorefront = () => {
           </h3>
           <p className="text-white/70  max-w-md">{activeProduct.description}</p>
 
-          <div className="flex gap-4 mt-8">
-            <Link href={"#"}>
-              <button className={`${style.button.accent} `}>
+          <div className="flex flex-col md:flex-row  gap-4 mt-8 ">
+            <Link href={"#"} className="">
+              <button className={`${style.button.accent} w-full md:w-fit `}>
                
                 <BsCartCheck size={20} className="mr-2 " /> Add to Cart
               </button>
             </Link>
 
             <Link href={"#"}>
-              <button className="flex items-center gap-2 cursor-pointer rounded-full border border-orangeColor  text-orangeColor text-sm md:text-base font-medium text-font px-5 py-2.5 md:px-6 md:py-3 transition-all duration-300 hover:bg-orangeColorHover hover:text-white">
+              <button className="w-full md:w-fit flex items-center justify-center gap-2 rounded-full border border-orangeColor px-5 py-2.5 text-sm font-medium text-orangeColor transition-all duration-300 hover:bg-orangeColor hover:text-white md:px-6 md:py-3 md:text-base">
                 View Collection 
                 <FaArrowRight  size={20} />
               </button>
